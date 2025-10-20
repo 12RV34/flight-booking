@@ -2,6 +2,16 @@
 
 A full-stack web application for managing flight bookings with a React frontend and Flask backend.
 
+[Screenshot 2025-10-20 at 10.08.18 PM.pdf](https://github.com/user-attachments/files/23005702/Screenshot.2025-10-20.at.10.08.18.PM.pdf)
+[Screenshot 2025-10-20 at 10.08.18 PM (1).pdf](https://github.com/user-attachments/files/23005701/Screenshot.2025-10-20.at.10.08.18.PM.1.pdf)
+[Screenshot.2025-10-20.at.10.08.18.PM.1.pdf](https://github.com/user-attachments/files/23005699/Screenshot.2025-10-20.at.10.08.18.PM.1.pdf)
+[Screenshot 2025-10-20 at 10.08.13 PM.pdf](https://github.com/user-attachments/files/23005696/Screenshot.2025-10-20.at.10.08.13.PM.pdf)
+[Screenshot 2025-10-20 at 10.07.51 PM.pdf](https://github.com/user-attachments/files/23005695/Screenshot.2025-10-20.at.10.07.51.PM.pdf)
+[Screenshot 2025-10-20 at 10.07.37 PM.pdf](https://github.com/user-attachments/files/23005690/Screenshot.2025-10-20.at.10.07.37.PM.pdf)
+[Screenshot 2025-10-20 at 10.07.22 PM.pdf](https://github.com/user-attachments/files/23005706/Screenshot.2025-10-20.at.10.07.22.PM.pdf)
+[Screenshot 2025-10-20 at 10.06.51 PM.pdf](https://github.com/user-attachments/files/23005718/Screenshot.2025-10-20.at.10.06.51.PM.pdf)
+[Screenshot 2025-10-20 at 10.06.48 PM.pdf](https://github.com/user-attachments/files/23005733/Screenshot.2025-10-20.at.10.06.48.PM.pdf)
+
 ## Features
 
 - View available flights
@@ -15,8 +25,6 @@ A full-stack web application for managing flight bookings with a React frontend 
 
 ### Frontend
 - React
-[Screenshot 2025-10-20 at 10.08.18 PM (1).pdf](https://github.com/user-attachments/files/23005653/Screenshot.2025-10-20.at.10.08.18.PM.1.pdf)
-
 - Vite
 - CSS for styling
 - Axios for API calls
