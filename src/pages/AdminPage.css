@@ -1,0 +1,629 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f6fa;
+}
+
+/* Password Modal */
+.password-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.password-modal-container {
+  width: 100%;
+  max-width: 400px;
+  animation: modalAppear 0.3s ease-out;
+
+}
+
+@keyframes modalAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.password-modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.password-modal-header {
+  background: linear-gradient(135deg, #436dfe 0%, #2c5af3 100%);
+  color: white;
+  padding: 30px;
+  text-align: center;
+}
+
+.lock-icon {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.password-modal-header h3 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.password-modal-body {
+  padding: 30px;
+}
+
+.password-modal-body p {
+  text-align: center;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.password-form {
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #436dfe;
+  box-shadow: 0 0 0 3px rgba(67, 109, 254, 0.1);
+}
+
+.error-message {
+  background: #fed7d7;
+  color: #c53030;
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.password-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* Edit Modal */
+.edit-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 20px;
+}
+
+.edit-modal-container {
+  width: 100%;
+  max-width: 600px;
+  animation: modalAppear 0.3s ease-out;
+}
+
+.edit-modal-content {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.edit-modal-header {
+  background: linear-gradient(135deg, #436dfe 0%, #2c5af3 100%);
+  color: white;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.edit-modal-header h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.close-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.edit-modal-body {
+  padding: 25px;
+}
+
+.edit-modal-footer {
+  padding: 0 25px 25px 25px;
+  display: flex;
+  gap: 12px;
+}
+
+/* Main Admin Container */
+.admin-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.admin-header {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 5%;
+}
+
+.admin-header h2 {
+  color: #2d3748;
+  font-size: 2rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.admin-header p {
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.admin-message {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-weight: 500;
+  text-align: center;
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-message.success {
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.admin-message.error {
+  background: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Add Flight Section */
+.add-flight-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.add-flight-section h3 {
+  color: #2d3748;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.add-flight-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.add-flight-form input {
+  padding: 12px 15px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.add-flight-form input:focus {
+  outline: none;
+  border-color: #436dfe;
+  box-shadow: 0 0 0 3px rgba(67, 109, 254, 0.1);
+}
+
+.add-flight-btn {
+  margin-top: 10px;
+  padding: 14px 24px;
+  font-size: 1rem;
+}
+
+/* Flights Table Section */
+.flights-section {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.flights-section h3 {
+  color: #2d3748;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.flights-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+}
+
+.flights-table th {
+  background: #f7fafc;
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #4a5568;
+  border-bottom: 2px solid #e2e8f0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.flights-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #4a5568;
+}
+
+.flights-table tr:hover {
+  background: #f8f9ff;
+}
+
+.route-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.departure, .destination {
+  color: #2d3748;
+}
+
+.arrow {
+  color: #718096;
+}
+
+.schedule-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.schedule-cell div:first-child {
+  color: #e53e3e;
+  font-weight: 500;
+}
+
+.schedule-cell div:last-child {
+  color: #38a169;
+  font-weight: 500;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* Button Styles */
+.btn-primary {
+  background: linear-gradient(135deg, #436dfe 0%, #2c5af3 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(67, 109, 254, 0.3);
+}
+
+.btn-secondary {
+  background: #f8f9fa;
+  color: #666;
+  border: 2px solid #e0e0e0;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-secondary:hover {
+  background: #e9ecef;
+  border-color: #ccc;
+  transform: translateY(-2px);
+}
+
+.btn-edit {
+  background: #ecc94b;
+  color: #744210;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit:hover {
+  background: #d69e2e;
+  transform: translateY(-1px);
+}
+
+.btn-delete {
+  background: #fc8181;
+  color: #7b341e;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+  background: #f56565;
+  transform: translateY(-1px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .admin-container {
+    padding: 15px;
+  }
+
+  .admin-header {
+    padding: 20px;
+    margin-top: 16%;
+  }
+
+  .admin-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .add-flight-section,
+  .flights-section {
+    padding: 20px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .password-actions {
+    flex-direction: column;
+  }
+
+  .edit-modal-footer {
+    flex-direction: column;
+  }
+
+  .flights-table {
+    min-width: 600px;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .btn-edit, .btn-delete {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .password-modal-container,
+  .edit-modal-container {
+    margin: 10px;
+  }
+
+  .password-modal-header,
+  .edit-modal-header {
+    padding: 20px;
+  }
+
+  .password-modal-body,
+  .edit-modal-body {
+    padding: 20px;
+  }
+
+  .lock-icon {
+    font-size: 2.5rem;
+  }
+
+  .password-modal-header h3,
+  .edit-modal-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .admin-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .add-flight-section h3,
+  .flights-section h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Mobile Table Responsive */
+@media (max-width: 768px) {
+  .flights-table {
+    border: 0;
+    min-width: 100%;
+  }
+
+  .flights-table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .flights-table tr {
+    border-bottom: 3px solid #e2e8f0;
+    display: block;
+    margin-bottom: 15px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+  }
+
+  .flights-table td {
+    border-bottom: 1px solid #e2e8f0;
+    display: block;
+    text-align: right;
+    padding: 12px 15px;
+    position: relative;
+  }
+
+  .flights-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .flights-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #4a5568;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+  }
+
+  .route-cell,
+  .schedule-cell,
+  .action-buttons {
+    justify-content: flex-end;
+  }
+
+  .action-buttons {
+    flex-direction: row;
+    gap: 8px;
+  }
+}

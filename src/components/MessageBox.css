@@ -1,0 +1,257 @@
+.message-box {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  min-width: 320px;
+  max-width: 400px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  overflow: hidden;
+  animation: slideInRight 0.3s ease-out;
+  border-left: 4px solid;
+}
+
+.message-box.leaving {
+  animation: slideOutRight 0.3s ease-in forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOutRight {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+.message-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  position: relative;
+}
+
+.message-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.message-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.message-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.message-body {
+  font-size: 0.875rem;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.message-close {
+  background: none;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-close:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.message-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #f3f4f6;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 100%;
+  transform-origin: left;
+  animation: progressShrink linear forwards;
+}
+
+@keyframes progressShrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* Success Style */
+.message-box.success {
+  border-left-color: #10b981;
+  background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
+}
+
+.message-box.success .message-icon {
+  color: #10b981;
+}
+
+.message-box.success .message-title {
+  color: #065f46;
+}
+
+.message-box.success .progress-bar {
+  background: linear-gradient(90deg, #10b981, #34d399);
+}
+
+/* Error Style */
+.message-box.error {
+  border-left-color: #ef4444;
+  background: linear-gradient(135deg, #fef2f2 0%, #ffffff 100%);
+}
+
+.message-box.error .message-icon {
+  color: #ef4444;
+}
+
+.message-box.error .message-title {
+  color: #991b1b;
+}
+
+.message-box.error .progress-bar {
+  background: linear-gradient(90deg, #ef4444, #f87171);
+}
+
+/* Warning Style */
+.message-box.warning {
+  border-left-color: #f59e0b;
+  background: linear-gradient(135deg, #fffbeb 0%, #ffffff 100%);
+}
+
+.message-box.warning .message-icon {
+  color: #f59e0b;
+}
+
+.message-box.warning .message-title {
+  color: #92400e;
+}
+
+.message-box.warning .progress-bar {
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+/* Info Style */
+.message-box.info {
+  border-left-color: #3b82f6;
+  background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+}
+
+.message-box.info .message-icon {
+  color: #3b82f6;
+}
+
+.message-box.info .message-title {
+  color: #1e40af;
+}
+
+.message-box.info .progress-bar {
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
+}
+
+/* Multiple Messages */
+.message-box + .message-box {
+  top: 120px;
+}
+
+.message-box + .message-box + .message-box {
+  top: 220px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .message-box {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    min-width: auto;
+    max-width: none;
+  }
+
+  .message-content {
+    padding: 14px;
+  }
+
+  .message-box + .message-box {
+    top: 100px;
+  }
+
+  .message-box + .message-box + .message-box {
+    top: 190px;
+  }
+}
+
+@media (max-width: 480px) {
+  .message-box {
+    border-left-width: 3px;
+    border-radius: 10px;
+  }
+
+  .message-content {
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .message-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+  }
+
+  .message-title {
+    font-size: 0.9rem;
+  }
+
+  .message-body {
+    font-size: 0.85rem;
+  }
+}
+
+/* Hover Pause */
+.message-box:hover .progress-bar {
+  animation-play-state: paused;
+}
