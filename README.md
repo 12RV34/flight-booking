@@ -15,6 +15,8 @@ A full-stack web application for managing flight bookings with a React frontend 
 
 ### Frontend
 - React
+[Screenshot 2025-10-20 at 10.08.18 PM (1).pdf](https://github.com/user-attachments/files/23005653/Screenshot.2025-10-20.at.10.08.18.PM.1.pdf)
+
 - Vite
 - CSS for styling
 - Axios for API calls
